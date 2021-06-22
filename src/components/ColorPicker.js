@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import '../styles/ColorPicker.scss';
+import ReactDOM from 'react-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLock, faLockOpen } from '@fortawesome/free-solid-svg-icons';
 let predefColors = [
 	{
 		locked: false,
@@ -53,7 +56,7 @@ export default function ColorPicker() {
 							lockMe(i);
 						}}
 					>
-						<p>{col.name}</p>
+						<FontAwesomeIcon icon={col.locked ? faLock : faLockOpen} />
 						<p>{col.color}</p>
 					</div>
 				</li>
